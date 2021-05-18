@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+     <script src="https://code.jquery.com/jquery-1.12.4.min.js"> 
+  </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var JSONString = '[{"ProductName":"computer","Code":"ED002","Price":500,"ProductType":"electronic"},{"ProductName":"Chair","Code":"D5695","Price":1500,"ProductType":"furniture"}]';
+            var productJSON = JSON.parse(JSONString);//Convert JSONString to Value
+            var result = '';
+            $.each(productJSON, function (i, item) {
+                result += 'Product Name = ' + item.ProductName + '<br/>';
+                result += 'Code = ' + item.Code+ '<br/>';
+                result += 'Product Type = ' + item.ProductType + '<br/>';
+                result += 'Price = ' + item.Price + '<br/><br/>';
+            });
+             $('#resultDiv').html(result).css('background-Color', 'rgb(136, 210, 220)');
+        });
+    </script>
+</head>
+
+<body style="border:1px solid;width:400px">
+    <div id="resultDiv"></div>
+</body>
+</html> 
